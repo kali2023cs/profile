@@ -68,22 +68,59 @@ const Admin = () => {
     setIsAuthenticated(false);
   };
 
+  const saveToGitHub = async (filename, content) => {
+    const token = prompt("You are editing the live website!\\n\\nPlease enter your GitHub Personal Access Token to deploy these changes to your repository:");
+    if (!token) return false;
+
+    setSaveStatus('Connecting to GitHub API...');
+    const repo = 'kali2023cs/profile';
+    const path = `src/data/${filename}.json`;
+    const url = `https://api.github.com/repos/${repo}/contents/${path}`;
+
+    try {
+      const getRes = await fetch(url, { headers: { Authorization: `token ${token}` } });
+      const currentData = getRes.ok ? await getRes.json() : {};
+      
+      const base64Content = btoa(unescape(encodeURIComponent(JSON.stringify(content, null, 2))));
+
+      const putRes = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${token}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `Admin Dashboard: Update ${filename}.json`,
+          content: base64Content,
+          sha: currentData.sha
+        })
+      });
+
+      return putRes.ok;
+    } catch (e) {
+      console.error(e);
+      return false;
+    }
+  };
+
   const handleSave = async () => {
     try {
       const parsedData = JSON.parse(jsonText); // Validate JSON
       
-      const response = await fetch('/api/save', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ file: activeTab, data: parsedData })
-      });
-
-      if (response.ok) {
-        setSaveStatus('Saved successfully to json file!');
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        const response = await fetch('/api/save', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ file: activeTab, data: parsedData })
+        });
+        if (response.ok) setSaveStatus('Saved successfully to local json file!');
+        else setSaveStatus('Error saving file. Is Vite running?');
       } else {
-        setSaveStatus('Error saving file. Server might report an issue.');
+        const success = await saveToGitHub(activeTab, parsedData);
+        if (success) setSaveStatus('Changes pushed! GitHub is rebuilding your site, please wait ~1 min for the live URL to reflect changes.');
+        else setSaveStatus('Error: Failed to push to GitHub. Invalid token or repository permissions.');
       }
-      setTimeout(() => setSaveStatus(''), 3000);
+      setTimeout(() => setSaveStatus(''), 5000);
     } catch (e) {
       setSaveStatus('Invalid JSON format!');
     }
@@ -166,7 +203,7 @@ const Admin = () => {
               onChange={(e) => setJsonText(e.target.value)}
               spellCheck="false"
             />
-            <p className="text-xs text-slate-500 mt-2">* Changes are written directly to your /src/data JSON files by Vite plugin and hot-reloaded automatically.</p>
+            <p className="text-xs text-slate-500 mt-2">* Localhost saves instantly to JSON files. Live URL (GitHub Pages) uses the GitHub API to securely commit and deploy the files.</p>
           </div>
         </div>
       </div>
