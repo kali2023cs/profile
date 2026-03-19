@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Courier Management System",
+    "description": "Shipment lifecycle management system with real-time rate calculation and tracking, integrated with DHL, Aramex, and UPS.",
+    "tech": [
+      "React.js",
+      "Laravel",
+      "MySQL"
+    ],
+    "color": "from-blue-600 to-indigo-900",
+    "icon": "Box"
+  },
+  {
+    "title": "Global Travel Platform",
+    "description": "Travel booking engine integrating Sabre, Amadeus, and Mondee APIs. Powered by high-performance Golang microservices.",
+    "tech": [
+      "Golang",
+      "Microservices",
+      "REST APIs"
+    ],
+    "color": "from-emerald-600 to-teal-900",
+    "icon": "Plane"
+  },
+  {
+    "title": "AI-Powered CRM System",
+    "description": "Custom communication system integrating WhatsApp Business Cloud, Botpress AI agents, and ElevenLabs voice AI.",
+    "tech": [
+      "React.js",
+      "Node.js",
+      "Botpress",
+      "ElevenLabs"
+    ],
+    "color": "from-purple-600 to-pink-900",
+    "icon": "MessageSquare"
+  },
+  {
+    "title": "Hotel Management System",
+    "description": "Comprehensive system handling bookings, room management, billing, and housekeeping, with Firebase integrations.",
+    "tech": [
+      "Laravel",
+      "MySQL",
+      "Firebase"
+    ],
+    "color": "from-red-600 to-orange-900",
+    "icon": "Building2"
+  },
+  {
+    "title": "High-Scale Transaction APIs",
+    "description": "Optimized RESTful APIs and complex MySQL database queries designed to handle large-scale logistics and travel data.",
+    "tech": [
+      "Go",
+      "Laravel",
+      "MySQL Optimization"
+    ],
+    "color": "from-amber-600 to-orange-900",
+    "icon": "Server"
+  },
+  {
+    "title": "Secure Authentication Service",
+    "description": "Built robust and secure API integrations incorporating OAuth, API keys, and token-based security mechanisms.",
+    "tech": [
+      "OAuth",
+      "API Security",
+      "Token Auth"
+    ],
+    "color": "from-cyan-600 to-blue-900",
+    "icon": "ShieldCheck"
+  }
+]

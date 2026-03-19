@@ -1,0 +1,30 @@
+[
+  {
+    "company": "Vibrace Technologies Pvt Ltd",
+    "role": "Full Stack Developer",
+    "period": "04/2025 – Present",
+    "location": "Chennai, India",
+    "icon": "Briefcase",
+    "description": [
+      "Developed and maintained scalable full-stack web applications using React.js, Laravel, Node.js, Go, and MySQL, ensuring high performance and clean modular architecture.",
+      "Designed Courier Management Systems tracking shipment lifecycles and rates, integrating logistics carrier APIs like DHL, Aramex, and UPS.",
+      "Built Travel Booking modules with Sabre, Amadeus, and Mondee APIs alongside high-performance microservices using Golang.",
+      "Created custom CRM communication systems integrating WhatsApp Business Cloud, Botpress AI agents, and ElevenLabs voice AI for chat automation."
+    ],
+    "techStack": ["React.js", "Laravel", "Node.js", "Golang", "MySQL"]
+  },
+  {
+    "company": "Raspberry Infosystems Private Limited",
+    "role": "Full Stack Developer",
+    "period": "12/2023 – 01/2025",
+    "location": "Chennai, India",
+    "icon": "Building",
+    "description": [
+      "Developed and maintained a Hotel Management System using Laravel and MySQL for bookings, room management, and billing.",
+      "Built secure RESTful APIs to support smooth communication between system modules.",
+      "Integrated third-party services such as Firebase, SMS gateways, and WhatsApp APIs for notifications.",
+      "Designed and optimized MySQL database structures and queries to improve scalability."
+    ],
+    "techStack": ["Laravel", "MySQL", "Firebase", "REST APIs"]
+  }
+]

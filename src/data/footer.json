@@ -1,0 +1,14 @@
+{
+  "logoInitials": "K",
+  "name": "Kalidass R",
+  "description": "A software developer focused on building scalable backends and engaging frontend experiences. Let's engineer something extraordinary together.",
+  "socials": [
+    { "platform": "Linkedin", "link": "https://www.linkedin.com/in/kalidass-r-b575b825a" },
+    { "platform": "Github", "link": "https://github.com/kali2023cs" }
+  ],
+  "contact": {
+    "email": "kalidassr280@gmail.com",
+    "location": "Chennai, India"
+  },
+  "copyrightText": "Kalidass R. Designed & engineered meticulously."
+}

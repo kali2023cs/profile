@@ -1,0 +1,14 @@
+[
+  { "name": "React.js", "icon": "FaReact", "color": "text-sky-400 group-hover:text-sky-300" },
+  { "name": "Laravel", "icon": "SiLaravel", "color": "text-red-500 group-hover:text-red-400" },
+  { "name": "Node.js", "icon": "FaNodeJs", "color": "text-green-500 group-hover:text-green-400" },
+  { "name": "Golang", "icon": "SiGo", "color": "text-cyan-400 group-hover:text-cyan-300" },
+  { "name": "MySQL", "icon": "SiMysql", "color": "text-blue-500 group-hover:text-blue-400" },
+  { "name": "MongoDB", "icon": "SiMongodb", "color": "text-emerald-500 group-hover:text-emerald-400" },
+  { "name": "Core Java", "icon": "FaJava", "color": "text-orange-500 group-hover:text-orange-400" },
+  { "name": "Express.js", "icon": "SiExpress", "color": "text-gray-400 group-hover:text-white" },
+  { "name": "PHP", "icon": "FaPhp", "color": "text-indigo-400 group-hover:text-indigo-300" },
+  { "name": "JavaScript", "icon": "FaJavaJs", "fallbackIcon": "JS", "color": "text-yellow-400 group-hover:text-yellow-300" },
+  { "name": "HTML5", "icon": "FaHtml5", "color": "text-orange-500 group-hover:text-orange-400" },
+  { "name": "jQuery", "icon": "SiJquery", "color": "text-blue-400 group-hover:text-blue-300" }
+]
