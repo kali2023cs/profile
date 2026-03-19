@@ -30,5 +30,6 @@ const jsonSaverPlugin = () => ({
 });
 
 export default defineConfig({
+  base: '/profile/',
   plugins: [react(), jsonSaverPlugin()],
 })
