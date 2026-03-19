@@ -1,0 +1,38 @@
+name: Auto-Deploy Portfolio
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/data/**'
+      - 'src/**'
+      - 'index.html'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        # Uses npm install instead of ci in case package-lock is out of sync
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
